@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="script.js" ></script>
+    <script>
+    function Cifrar(){
+        
+        let textoNormal = document.getElementById('Uname').value
+        let clave = document.getElementById('clave').value
+
+        var message = CryptoJS.AES.encrypt(textoNormal, clave);
+        document.getElementById('cifrado').innerHTML = message
+    }
+    function Descifrar(){
+
+        var cifrado = document.getElementById('cifrado').value
+        var clave = document.getElementById('clave').value
+
+        var code = CryptoJS.AES.decrypt(cifrado, clave);
+        var decryptedMessage = code.toString(CryptoJS.enc.Utf8);
+
+        alert("Desencriptado: " + decryptedMessage)
+    }
+    
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado AES</title>
+</head>
+<body>
+    <h2>Cifrado con AES</h2><br>    
+    <div class="cifrados">    
+    <form id="cifrados">    
+        <label><b>Texto a cifrar     
+        </b>    
+        </label>    
+            <input type="text" name="Uname" id="Uname" placeholder="ej. Hola a todos">    
+        <br><br>    
+            <label><b>Clave     
+        </b>    
+        </label> 
+        <br>     
+            <input type="text" name="Pass" id="clave" placeholder="ej. asd123">    
+        <br><br>    
+        <input type="button" onclick="Cifrar()" name="log" id="log" value="Cifrar">
+        <input type="button" onclick="Descifrar()" name="log" id="log" value="Descifrar">       
+        <br><br>    
+        <textarea id="cifrado"></textarea>   
+        <input type="button" onclick="CambiarPagClave()" name="log2" id="log2" value="Cifrado Clave">
+        <input type="button" onclick="CambiarPagSHA()" name="log2" id="log2" value="Cifrado SHA">
+        <input type="button" onclick="CambiarPagRSA()" name="log2" id="log2" value="Cifrado RSA">
+    </form>     
+</body>
+</html>

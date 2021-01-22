@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado RSA</title>
+    <SCRIPT src="/jsencrypt-master/bin/jsencrypt.min.js"></SCRIPT>
+    <script src="script.js" ></script>
+    <script>
+
+        function compute(testFunction){
+        
+            switch(testFunction) {
+                case 'cifrar':
+                    debugger
+                    // Encrypt
+                    var encrypt = new JSEncrypt();
+                    encrypt.setPublicKey("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlOJu6TyygqxfWT7eLtGDwajtNFOb9I5XRb6khyfD1Yt3YiCgQWMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76xFxdU6jE0NQ+Z+zEdhUTooNRaY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4gwQco1KRMDSmXSMkDwIDAQAB")
+                    var encrypted = encrypt.encrypt(document.getElementById('Uname').value);
+                    document.getElementById('cifrado').innerHTML = encrypted
+                
+                break
+                case 'decifrar':
+                    // Decrypt with the private key...
+                    var decrypt = new JSEncrypt();
+                    decrypt.setPrivateKey("MIICXQIBAAKBgQDlOJu6TyygqxfWT7eLtGDwajtNFOb9I5XRb6khyfD1Yt3YiCgQWMNW649887VGJiGr/L5i2osbl8C9+WJTeucF+S76xFxdU6jE0NQ+Z+zEdhUTooNRaY5nZiu5PgDB0ED/ZKBUSLKL7eibMxZtMlUDHjm4gwQco1KRMDSmXSMkDwIDAQABAoGAfY9LpnuWK5Bs50UVep5c93SJdUi82u7yMx4iHFMc/Z2hfenfYEzu+57fI4fvxTQ//5DbzRR/XKb8ulNv6+CHyPF31xk7YOBfkGI8qjLoq06V+FyBfDSwL8KbLyeHm7KUZnLNQbk8yGLzB3iYKkRHlmUanQGaNMIJziWOkN+N9dECQQD0ONYRNZeuM8zd8XJTSdcIX4a3gy3GGCJxOzv16XHxD03GW6UNLmfPwenKu+cdrQeaqEixrCejXdAFz/7+BSMpAkEA8EaSOeP5Xr3ZrbiKzi6TGMwHMvC7HdJxaBJbVRfApFrE0/mPwmP5rN7QwjrMY+0+AbXcm8mRQyQ1+IGEembsdwJBAN6az8Rv7QnD/YBvi52POIlRSSIMV7SwWvSK4WSMnGb1ZBbhgdg57DXaspcwHsFV7hByQ5BvMtIduHcT14ECfcECQATeaTgjFnqE/lQ22Rk0eGaYO80cc643BXVGafNfd9fcvwBMnk0iGX0XRsOozVt5AzilpsLBYuApa66NcVHJpCECQQDTjI2AQhFc1yRnCU/YgDnSpJVm1nASoRUnU8Jfm3Ozuku7JUXcVpt08DFSceCEX9unCuMcT72rAQlLpdZir876");
+                    var uncrypted = decrypt.decrypt(document.getElementById('cifrado').value);
+                    if (uncrypted == false) {
+                        alert('El texto no se decifro')
+                    }
+                    else {
+                        alert('El texto decifrado es: ' + uncrypted)
+                    }
+                break;
+
+            }
+        }   
+
+    </script>
+</head>
+<body>
+    <h2>Cifrado RSA</h2><br>    
+    <div class="cifrados">    
+    <form id="cifrados">    
+        <label><b>Texto a cifrar     
+        </b>    
+        </label>    
+            <input type="text" name="Uname" id="Uname" placeholder="ej. Hola a todos">    
+        <br><br>    
+        <input type="button" onclick="compute('cifrar')" name="log" id="log" value="Cifrar"> 
+        <input type="button" onclick="compute('decifrar')" name="log" id="log" value="Descifrar">   
+        <br><br>    
+        <textarea id="cifrado"></textarea>   
+        <input type="button" onclick="CambiarPagClave()" name="log2" id="log2" value="Cifrado Clave">
+        <input type="button" onclick="CambiarPagAES()" name="log2" id="log2" value="Cifrado AES">
+        <input type="button" onclick="CambiarPagSHA()" name="log2" id="log2" value="Cifrado SHA">
+    </form>     
+</body>
+
+
+</html>

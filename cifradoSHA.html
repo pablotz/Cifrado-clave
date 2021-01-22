@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado SHA</title>
+    <script src="./pidcrypt.js"></script>
+    <script src="./pidcrypt_util.js"></script>
+    <script src="./sha256.js"></script>
+    <script src="script.js" ></script>
+    <script>
+
+    function compute(testFunction){
+            debugger
+          var input = document.getElementById('Uname').value
+          var result ='';
+          var ok = false;
+          switch(testFunction) {
+            case 'sha256':
+                result = pidCrypt.SHA256(input);
+                document.getElementById('cifrado').innerHTML = result
+              break;
+        }
+    }
+        
+    </script>
+</head>
+<body>
+    <h2>Cifrado SHA256</h2><br>    
+    <div class="cifrados">    
+    <form id="cifrados">    
+        <label><b>Texto a cifrar     
+        </b>    
+        </label>    
+            <input type="text" name="Uname" id="Uname" placeholder="ej. Hola a todos">    
+        <br><br>    
+        <input type="button" onclick="compute('sha256')" name="log" id="log" value="Cifrar"> 
+        <br><br>    
+        <textarea id="cifrado"></textarea>   
+        <input type="button" onclick="CambiarPagClave()" name="log2" id="log2" value="Cifrado Clave">
+        <input type="button" onclick="CambiarPagAES()" name="log2" id="log2" value="Cifrado AES">
+        <input type="button" onclick="CambiarPagRSA()" name="log2" id="log2" value="Cifrado RSA">
+    </form>     
+</body>
+
+
+</html>

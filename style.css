@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Poppins&display=swap');
+body{
+    background-color: rgb(38, 85, 126);
+}
+
+.cifrados{  
+    width: 382px;  
+    overflow: hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 80px;  
+    background: #404a4d7e;  
+    border-radius: 15px ;  
+    
+    -webkit-box-shadow: 16px 14px 69px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 16px 14px 69px -12px rgba(0,0,0,0.75);
+    box-shadow: 16px 14px 69px -12px rgba(0,0,0,0.75);
+}  
+h2{  
+text-align: center;  
+color: #ffffff;  
+padding: 20px;  
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}  
+label{  
+color: #e4e4e4;  
+font-size: 17px;  
+font-family: 'Poppins', sans-serif;
+}  
+#Uname{  
+width: 300px;  
+height: 30px;  
+border: none;  
+border-radius: 3px;  
+padding-left: 8px;  
+}  
+#clave{  
+width: 300px;  
+height: 30px;  
+border: none;  
+border-radius: 3px;  
+padding-left: 8px;  
+  
+}  
+#log{  
+width: 100px;  
+height: 30px;  
+border: none;  
+border-radius: 17px;  
+padding-left: 1px;  
+padding-bottom: 8px;
+color: blue;  
+align-items: center;
+
+
+}  
+
+#log2{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 1px;  
+    padding-bottom: 8px;
+    color: blue;  
+    align-items: center;
+    
+    
+    }  
+span{  
+color: white;  
+font-size: 17px;  
+}  
+a{  
+float: right;  
+background-color: grey;  
+}  
+
+textarea{
+    width: 300px;
+    height: 150px;
+}

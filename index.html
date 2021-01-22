@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" ></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado Clave</title>
+</head>
+<body>
+    <h2>Cifrado con clave</h2><br>    
+    <div class="cifrados">    
+    <form id="cifrados">    
+        <label><b>Texto a cifrar     
+        </b>    
+        </label>    
+            <input type="text" name="Uname" id="Uname" placeholder="ej. Hola a todos">    
+        <br><br>    
+            <label><b>Clave     
+        </b>    
+        </label> 
+        <br>     
+            <input type="text" name="Pass" id="clave" placeholder="ej. asd123">    
+        <br><br>    
+        <input type="button" onclick="Cifrar()" name="log" id="log" value="Cifrar">
+        <input type="button" onclick="Descifrar()" name="log" id="log" value="Descifrar">       
+        <br><br>    
+        <textarea id="cifrado"></textarea>   
+        <input type="button" onclick="CambiarPagSHA()" name="log2" id="log2" value="Cifrado SHA">
+        <input type="button" onclick="CambiarPagAES()" name="log2" id="log2" value="Cifrado AES">
+        <input type="button" onclick="CambiarPagRSA()" name="log2" id="log2" value="Cifrado RSA">
+    </form>     
+</body>
+</html>
